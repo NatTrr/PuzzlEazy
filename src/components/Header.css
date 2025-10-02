@@ -1,0 +1,16 @@
+.header {
+  background-color: #000000; /* црна позадина */
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px; /* заоблени агли */
+  margin-bottom: 20px;
+  display: inline-block; /* за да може да се види border-radius */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3rem; /* поголем текст */
+  font-weight: 700; /* потесен/дебел текст */
+  font-family: 'Arial Black', Arial, sans-serif;
+  letter-spacing: 2px; /* визуелно подолг текст */
+}

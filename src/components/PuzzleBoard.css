@@ -1,0 +1,29 @@
+.PuzzleBoard {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  min-height: 300px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-images {
+  display: flex;
+  gap: 50px; /* растојание помеѓу сликите, околу половина сантиметар на екран со нормална резолуција */
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.puzzle-image {
+  width: 220px; /* сите слики ист големина */
+  height: 220px; /* квадратна форма за ист визуелен ефект */
+  object-fit: cover; /* да се прилагодат сликите во рамка */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+

@@ -1,0 +1,38 @@
+.start-screen {
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.puzzle-options {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.puzzle-card {
+  cursor: pointer;
+  border: 2px solid #282c34;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.puzzle-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.puzzle-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.puzzle-card p {
+  margin-top: 10px;
+  font-weight: bold;
+}
