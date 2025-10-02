@@ -1,26 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PuzzleBoard.css';
 import Scream from '../images/scream.jpg';
 import Cafe from '../images/cafe_terrace.jpg';
-import PuzzleAction from './PuzzleAction';
+import { useNavigate } from 'react-router-dom';
 
 function PuzzleBoard() {
-  const [selectedPuzzle, setSelectedPuzzle] = useState(null);
+  const navigate = useNavigate();
 
   const handleImageClick = (puzzleName) => {
-    setSelectedPuzzle(puzzleName);
+    // Преку navigate праќаме state до PuzzleAction
+    navigate("/puzzle-action", { state: { puzzleName } });
   };
 
-  const handleBack = () => {
-    setSelectedPuzzle(null);
-  };
-
-  // Ако е избрана слика, прикажи PuzzleAction компонентата
-  if (selectedPuzzle) {
-    return <PuzzleAction puzzleName={selectedPuzzle} onBack={handleBack} />;
-  }
-
-  // Основен екран со слики
   return (
     <div className="PuzzleBoard">
       <div className="puzzle-images">
@@ -34,7 +25,7 @@ function PuzzleBoard() {
           src={Cafe} 
           alt="Cafe Terrace" 
           className="puzzle-image" 
-          onClick={() => handleImageClick("Cafe Terrace")}
+          onClick={() => handleImageClick("Café Terrace at Night")}
         />
       </div>
     </div>
