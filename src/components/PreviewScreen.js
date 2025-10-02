@@ -17,7 +17,11 @@ function PreviewScreen() {
         {/* Back копче внатре во рамката */}
         <button
           className="back-button"
-          onClick={() => navigate("/puzzle-action")}
+          onClick={() =>
+            navigate("/puzzle-action", {
+              state: { puzzleName: location.state.puzzleName }, // праќаме го името на сликата
+            })
+          }
         >
           Back
         </button>

@@ -4,19 +4,20 @@ import './PuzzleAction.css';
 
 function PuzzleAction() {
   const location = useLocation();
-  const navigate = useNavigate();
-  const puzzleName = location.state?.puzzleName || "Puzzle"; // зема име од првиот екран
+  const puzzleName = location.state?.puzzleName || "Puzzle"; // го зема името на сликата
   const fileInputRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleInsert = () => {
-    fileInputRef.current.click(); // отвори скриено input поле
+    fileInputRef.current.click();
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
-      navigate("/preview", { state: { image: imageURL } });
+      navigate("/preview", { state: { image: imageURL, puzzleName } }); 
+      // праќаме го puzzleName за да можеме да се враќаме правилно
     }
   };
 
@@ -26,16 +27,16 @@ function PuzzleAction() {
 
   return (
     <div className="puzzle-action">
-      {/* Името на избраната puzzle од првиот екран */}
-      <h2>{puzzleName}</h2>
+      <h2>{puzzleName}</h2> {/* Прикажува името на избраната слика */}
 
       <div className="action-buttons">
         <button onClick={handleInsert}>Insert</button>
         <button onClick={handleCapture}>Capture</button>
       </div>
 
-      {/* Back копче ќе враќа на првиот екран */}
-      <button className="back-button" onClick={() => navigate("/")}>Back</button>
+      <button className="back-button" onClick={() => navigate("/")}>
+        Back
+      </button>
 
       <input
         type="file"
